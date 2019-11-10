@@ -63,10 +63,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\all_custom_challenge.cs" />
-    <Compile Include="Assets\all_random_challenge.cs" />
-    <Compile Include="Assets\challenge.cs" />
-    <Compile Include="Assets\create_post.cs" />
+    <Compile Include="Assets\scriptc#\all_custom_challenge.cs" />
+    <Compile Include="Assets\scriptc#\all_random_challenge.cs" />
+    <Compile Include="Assets\scriptc#\challenge.cs" />
+    <Compile Include="Assets\scriptc#\content_hight.cs" />
+    <Compile Include="Assets\scriptc#\create_post.cs" />
+    <Compile Include="Assets\scriptc#\expand_showlist.cs" />
+    <Compile Include="Assets\scriptc#\gotomain.cs" />
+    <Compile Include="Assets\scriptc#\minimize.cs" />
+    <Compile Include="Assets\scriptc#\userdata.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -122,31 +127,31 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>D:/unityproject/challenge/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/BBIG_File/Palanai/Pelanai/challenge/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>D:/unityproject/challenge/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/BBIG_File/Palanai/Pelanai/challenge/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>D:/unityproject/challenge/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/BBIG_File/Palanai/Pelanai/challenge/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>D:/unityproject/challenge/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/BBIG_File/Palanai/Pelanai/challenge/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>D:/unityproject/challenge/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/BBIG_File/Palanai/Pelanai/challenge/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>D:/unityproject/challenge/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/BBIG_File/Palanai/Pelanai/challenge/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>D:/unityproject/challenge/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/BBIG_File/Palanai/Pelanai/challenge/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>D:/unityproject/challenge/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/BBIG_File/Palanai/Pelanai/challenge/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>D:/unityproject/challenge/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/BBIG_File/Palanai/Pelanai/challenge/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>D:/unityhub/2019.2.9f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

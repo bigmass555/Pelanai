@@ -8,9 +8,9 @@ using UnityEngine.UI;
 public class all_random_challenge : MonoBehaviour
 {
     private static Dictionary<int, string> _all_challenge = new Dictionary<int, string>();
-    public TextMeshPro show_random;
     public create_post create_post_scrp;
-    
+    public TextMeshProUGUI show_random;
+    public gotomain gotomain_scrp;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +36,7 @@ public class all_random_challenge : MonoBehaviour
         _all_challenge.Add(18, "r");
         _all_challenge.Add(19, "s");
         _all_challenge.Add(20, "t");
+        butt_random();
     }
 
     // Update is called once per frame
@@ -51,6 +52,8 @@ public class all_random_challenge : MonoBehaviour
 
     public void butt_confirm_random()
     {
-        create_post_scrp.selected = show_random;
+        create_post_scrp.selected.text = show_random.text;
+        create_post_scrp.create();
+        gotomain_scrp.set_to_main();
     }
 }
