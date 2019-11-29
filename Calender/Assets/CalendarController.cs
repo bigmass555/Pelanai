@@ -26,6 +26,7 @@ public class CalendarController : MonoBehaviour, IDragHandler, IEndDragHandler
         oriposition = transform.position;
         write_calendar(Helper.Time.SubtractDate(Helper.Time.FullDate, index), 1);
         change_text(index);
+        Debug.Log(Helper.Time.GetMonthName(Helper.Time.FullDate));
     }
 
     // Update is called once per frame

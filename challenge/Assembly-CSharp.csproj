@@ -63,14 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\scriptc#\all_custom_challenge.cs" />
-    <Compile Include="Assets\scriptc#\all_random_challenge.cs" />
-    <Compile Include="Assets\scriptc#\challenge.cs" />
-    <Compile Include="Assets\scriptc#\content_hight.cs" />
+    <Compile Include="Assets\scriptc#\challenge_butt.cs" />
     <Compile Include="Assets\scriptc#\create_post.cs" />
     <Compile Include="Assets\scriptc#\expand_showlist.cs" />
-    <Compile Include="Assets\scriptc#\gotomain.cs" />
-    <Compile Include="Assets\scriptc#\minimize.cs" />
     <Compile Include="Assets\scriptc#\userdata.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
