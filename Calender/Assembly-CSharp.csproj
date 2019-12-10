@@ -68,6 +68,7 @@
     <Compile Include="Assets\Helper.cs" />
     <Compile Include="Assets\Script\codeachievement.cs" />
     <Compile Include="Assets\Script\NewBehaviourScript.cs" />
+    <Compile Include="Assets\scriptc#\challenge.cs" />
     <Compile Include="Assets\scriptc#\challenge_butt.cs" />
     <Compile Include="Assets\scriptc#\create_post.cs" />
     <Compile Include="Assets\scriptc#\deadline_timeend.cs" />
