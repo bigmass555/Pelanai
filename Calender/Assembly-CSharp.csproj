@@ -64,16 +64,19 @@
   <ItemGroup>
     <Compile Include="Assets\Calender\Scripts Calender\CalendarController.cs" />
     <Compile Include="Assets\Calender\Scripts Calender\GameManager.cs" />
-    <Compile Include="Assets\Calender\Scripts Calender\Helper.cs" />
     <Compile Include="Assets\Calender\Scripts Calender\MonthPage.cs" />
+    <Compile Include="Assets\Challenges\scriptc#\challenge.cs" />
+    <Compile Include="Assets\Challenges\scriptc#\challenge_butt.cs" />
+    <Compile Include="Assets\Challenges\scriptc#\create_post.cs" />
+    <Compile Include="Assets\Challenges\scriptc#\deadline_timeend.cs" />
+    <Compile Include="Assets\Challenges\scriptc#\expand_showlist.cs" />
+    <Compile Include="Assets\Challenges\scriptc#\userdata.cs" />
+    <Compile Include="Assets\Pelanai Script\Helper.cs" />
+    <Compile Include="Assets\Pelanai Script\MainMenu.cs" />
+    <Compile Include="Assets\Pelanai Script\MenuButton.cs" />
+    <Compile Include="Assets\Pelanai Script\Pelanai.cs" />
     <Compile Include="Assets\Script\codeachievement.cs" />
     <Compile Include="Assets\Script\NewBehaviourScript.cs" />
-    <Compile Include="Assets\scriptc#\challenge.cs" />
-    <Compile Include="Assets\scriptc#\challenge_butt.cs" />
-    <Compile Include="Assets\scriptc#\create_post.cs" />
-    <Compile Include="Assets\scriptc#\deadline_timeend.cs" />
-    <Compile Include="Assets\scriptc#\expand_showlist.cs" />
-    <Compile Include="Assets\scriptc#\userdata.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />

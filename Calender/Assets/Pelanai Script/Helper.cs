@@ -61,13 +61,21 @@ public static class Helper
         {
             DateTime datetime = DateTime.Parse(dateInput);
             List<string> days_list = new List<string>
-        {
+            {
             "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-        };
+            };
             string day_str = datetime.DayOfWeek.ToString();
             int day_int = days_list.IndexOf(day_str);
 
             return day_int;
+        }
+        public static string GetDayFromInt(int num)
+        {
+            List<string> days_list = new List<string>
+            {
+            "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+            };
+            return days_list[(num - 1) % 7];
         }
         /// <summary>
         /// เปลี่ยนวันที่ให้กลายเป็นวันในสัปดาห์ ตามชื่อไง โธ่เว้ย!
