@@ -309,8 +309,7 @@ MonoBehaviour:
     topRight: {r: 1, g: 1, b: 1, a: 1}
     bottomLeft: {r: 1, g: 1, b: 1, a: 1}
     bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 11400000, guid: 479a66fa4b094512a62b0a8e553ad95a,
-    type: 2}
+  m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0
   m_overrideHtmlColors: 0
@@ -475,12 +474,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 206dd67f80dd5304d8b3525c1ed5d6e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  texthead: {fileID: 0}
+  texthead: {fileID: 5252181813491647809}
   bg_textdetail: {fileID: 0}
   textdetail: {fileID: 0}
+  textname: {fileID: 0}
   mark_bg_textdetail: {fileID: 0}
+  score_show: {fileID: 0}
+  challenge_Butt: {fileID: 0}
+  create_Post_scrp: {fileID: 0}
   clear: {fileID: 0}
   notclear: {fileID: 0}
+  this_star: 0
 --- !u!114 &5056980508689191600
 MonoBehaviour:
   m_ObjectHideFlags: 0

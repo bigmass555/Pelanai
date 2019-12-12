@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class challenge_butt : MonoBehaviour
 {
-    public GameObject sub_bg, ccc_bg, crc_bg, dl_bg;
+    public GameObject selectmode_bg, create_activity_bg, deadline_bg;
     public GameObject bg_textdetail;
     public float hide_x, hide_y;
     public create_post create_Post_script;
-    public GameObject ccc_score_butt;
-    public GameObject dl_score_butt;
-    public GameObject selected_parent;
+    public GameObject difficulty_of_act;
+    public GameObject priority_of_deadline;
+    public GameObject selected_starmode;
     void Start()
     {
-        sub_bg.SetActive(false);
-        ccc_bg.SetActive(false);
-        dl_bg.SetActive(false);
+        selectmode_bg.SetActive(false);
+        create_activity_bg.SetActive(false);
+        deadline_bg.SetActive(false);
         hide_x = bg_textdetail.transform.position.x;
         hide_y = bg_textdetail.transform.position.y;
-    }
-
-    void Update()
-    {
-        
     }
 
     public void minimize_butt()
@@ -32,37 +27,37 @@ public class challenge_butt : MonoBehaviour
 
     public void button_create()
     {
-        sub_bg.SetActive(true);
+        selectmode_bg.SetActive(true);
     }
     public void button_cancle_create()
     {
-        sub_bg.SetActive(false);
+        selectmode_bg.SetActive(false);
     }
-    public void button_to_create_custom()
+    public void button_to_create_activity()
     {
-        ccc_bg.SetActive(true);
-        selected_parent = ccc_score_butt;
+        create_activity_bg.SetActive(true);
+        selected_starmode = difficulty_of_act;
     }
-    public void button_cancle_create_custom()
+    public void button_cancle_create_activity()
     {
-        ccc_bg.SetActive(false);
+        create_activity_bg.SetActive(false);
     }
 
     public void button_to_deadline()
     {
-        dl_bg.SetActive(true);
-        selected_parent = dl_score_butt;
+        deadline_bg.SetActive(true);
+        selected_starmode = priority_of_deadline;
     }
     public void button_cancle_deadline()
     {
-        dl_bg.SetActive(false);
+        deadline_bg.SetActive(false);
     }
 
     public void set_to_main()
     {
-        sub_bg.SetActive(false);
-        ccc_bg.SetActive(false);
-        dl_bg.SetActive(false);
+        selectmode_bg.SetActive(false);
+        create_activity_bg.SetActive(false);
+        deadline_bg.SetActive(false);
     }
 
 }
