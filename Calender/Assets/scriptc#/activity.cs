@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class activity
+public class Activity
 {
     public string name;
     public string detail;
     public int difficulty;
     public List<int> days;
+    public bool compeleted = false;
 }

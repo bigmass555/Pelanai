@@ -7,6 +7,7 @@ using TMPro;
 public class create_post : MonoBehaviour
 {
     public RectTransform content_rect;
+    public GameObject dayGrid;
 
     //activity_list
     public List<string> name_act_list;
@@ -30,9 +31,6 @@ public class create_post : MonoBehaviour
     public GameObject img_star;
    
     public int int_star = 0;
-    public int score_clear, score_notclear;
-       
-    public TextMeshProUGUI show_clear, show_notclear;
     
     public challenge_butt challenge_Butt;
     public act_days actdays;
@@ -49,8 +47,6 @@ public class create_post : MonoBehaviour
     void Start()
     {
         //Setscore
-        show_clear.text = "Clear: " + score_clear.ToString();
-        show_notclear.text = "Not Clear: " + score_notclear.ToString();
         activity_type_optionDropdown = new List<string>
         {   
             "---CUSTOM ACTIVITY---",
@@ -159,7 +155,7 @@ public class create_post : MonoBehaviour
         //update content_rect_tranform lenght to match with their child
         content_rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, (showlist_prefab_group.Count * 50));
     } 
-
+    /*
     public void setting_showlist()
     {
         showlist_prefab_group.Clear();
@@ -176,34 +172,46 @@ public class create_post : MonoBehaviour
     {
         foreach (Transform child in unuse.transform)
         {
-            GameObject.Destroy(child.gameObject);
+            Destroy(child.gameObject);
         }
     }
-    
-    
-    
-
+    */
     public void butt_confirm_create()
     {
         act_difficulty = int_star;
-        //act_daylist = { 1};
-        activity newActivity = new activity();
+        Activity newActivity = new Activity();
         newActivity.name = act_name.text;
         newActivity.detail = act_detail.text;
         newActivity.difficulty = act_difficulty;
-        newActivity.days = act_daylist;
-        //sad.list.add(newChallenge);
-        
-        create();
+        newActivity.days = set_toggle();
+        PelanaiData.activitiesList.Add(newActivity);
+        foreach(int i in newActivity.days)
+        {
+            Debug.Log(i);
+        }
+        Debug.Log("created");
+        create(newActivity);
         challenge_Butt.set_to_main();
-    }//OnClick 
-
-    public void create()
+    }//OnClick    public void set_toggle()
+    List<int> set_toggle()
     {
-        name_act_list.Add(act_name.text);
-        detail_act_list.Add(act_detail.text);
-        difficulty_act_list.Add(act_difficulty);
-        Instantiate(prefab_showlist.gameObject.transform, content.transform);
-        setting_showlist();
+        List<int> dayList = new List<int>();
+        int step = 1;
+        foreach (Toggle toggle in dayGrid.GetComponentsInChildren<Toggle>())
+        {
+            if (toggle.isOn)
+            {
+                dayList.Add(step);
+            }
+            step++;
+        }
+        return dayList;
     }
+
+    public void create(Activity activity)
+    {
+        Showlist show_list = Instantiate(prefab_showlist, content.transform).GetComponent<Showlist>();
+        show_list.set_up(activity);
+    }
+
 }

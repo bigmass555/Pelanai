@@ -38,9 +38,16 @@ public class Checklist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             confirm();
         }
     }
-    void set_up()
+    public void set_up(Activity activity)
     {
-
+        nameText.text = activity.name;
+        descriptionText.text = activity.detail;
+        difficulty = activity.difficulty;
+        set_star();
+        if (activity.compeleted)
+        {
+            disable();
+        }
     }
     void set_star()
     {

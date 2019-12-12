@@ -15,6 +15,10 @@ public static class Helper
         public static string Meridium = GetmMeridium();
         public static int Year = GetYear();
         public static DateTime FullDate = GetFullDate();
+        static List<string> days_list = new List<string>
+            {
+            "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
+            };
         public static string GetMonthName(DateTime date)
         {
             string month_str = date.ToString("MMMM");
@@ -60,21 +64,20 @@ public static class Helper
         public static int GetDayInt(string dateInput)
         {
             DateTime datetime = DateTime.Parse(dateInput);
-            List<string> days_list = new List<string>
-            {
-            "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-            };
             string day_str = datetime.DayOfWeek.ToString();
             int day_int = days_list.IndexOf(day_str);
 
             return day_int;
         }
+        public static int GetintFromDay(string dayInput)
+        {
+            if (days_list.Contains(dayInput))
+                Debug.Log(dayInput);
+                return days_list.IndexOf(dayInput) + 1;
+            return 100;
+        }
         public static string GetDayFromInt(int num)
         {
-            List<string> days_list = new List<string>
-            {
-            "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
-            };
             return days_list[(num - 1) % 7];
         }
         /// <summary>
