@@ -16,7 +16,6 @@ public class expand_showlist : MonoBehaviour
     public challenge_butt challenge_Butt;
     public create_post create_Post_scrp;
 
-    public GameObject clear, notclear;
     public int this_star;
     // Start is called before the first frame update
     void Start()
@@ -30,12 +29,6 @@ public class expand_showlist : MonoBehaviour
         textname = GameObject.Find("Textname");
         score_show = GameObject.Find("score_show");
         this_star = create_Post_scrp.act_difficulty;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void expand()
@@ -53,25 +46,4 @@ public class expand_showlist : MonoBehaviour
             Instantiate(create_Post_scrp.img_star, challenge_Butt.selected_starmode.transform);
         }
     }
-
-    public void clear_butt()
-    {
-        create_Post_scrp.score_clear += this_star;
-        create_Post_scrp.show_clear.GetComponent<TextMeshProUGUI>().text = "Clear: " + create_Post_scrp.score_clear.ToString();
-        gameObject.transform.SetParent(create_Post_scrp.unuse.transform);
-        create_Post_scrp.detail_act_list.RemoveAt(int.Parse(gameObject.name));
-        create_Post_scrp.showlist_prefab_group.RemoveAt(int.Parse(gameObject.name));
-        create_Post_scrp.setting_showlist();
-    }
-
-    public void not_clear_butt()
-    {
-        create_Post_scrp.score_notclear += this_star;
-        create_Post_scrp.show_notclear.GetComponent<TextMeshProUGUI>().text = "Not Clear: "+create_Post_scrp.score_notclear.ToString();
-        gameObject.transform.SetParent(create_Post_scrp.unuse.transform);
-        create_Post_scrp.detail_act_list.RemoveAt(int.Parse(gameObject.name));
-        create_Post_scrp.showlist_prefab_group.RemoveAt(int.Parse(gameObject.name));
-        create_Post_scrp.setting_showlist();
-    }
-    
 }

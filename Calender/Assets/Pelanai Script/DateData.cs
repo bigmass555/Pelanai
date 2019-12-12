@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pelanai : MonoBehaviour
+public class DateData : MonoBehaviour
 {
+    public Activity[] activitieslist;
+    public int rate = 0;
     // Start is called before the first frame update
     void Start()
     {
