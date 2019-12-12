@@ -37,5 +37,6 @@ public class MenuButton : MonoBehaviour
         }
         target.blocksRaycasts = state;
         target.interactable = state;
+        target.gameObject.SetActive(state);
     }
 }

@@ -150,11 +150,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nameText: {fileID: 5672359773864905555}
   descriptionText: {fileID: 5672359774563632284}
+  activity:
+    name: 
+    detail: 
+    difficulty: 0
+    days: 
+    compeleted: 0
   starGrid: {fileID: 5672359774455568899}
   starImage: {fileID: 6687696875178931528, guid: 6d5e4f72217fa2542ac3afb92ee0f831,
     type: 3}
   fillBar: {fileID: 5672359773588051750}
   difficulty: 0
+  button: {fileID: 5672359773092795611}
   fillTime: 1.5
 --- !u!1 &5672359773588051744
 GameObject:

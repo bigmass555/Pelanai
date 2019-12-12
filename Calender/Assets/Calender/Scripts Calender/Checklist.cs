@@ -9,11 +9,12 @@ public class Checklist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI descriptionText;
+    public Activity activity;
     public GameObject starGrid;
     public GameObject starImage;
     public Image fillBar;
     public int difficulty;
-    Button button;
+    public Button button;
     [SerializeField] float fillTime = 1f;
     float fillSpeed;
     bool confirmed = false;
@@ -21,9 +22,7 @@ public class Checklist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // Start is called before the first frame update
     void Start()
     {
-        button = GetComponent<Button>();
         fillSpeed = 1 / fillTime;
-        set_star();
     }
 
     // Update is called once per frame
@@ -38,13 +37,16 @@ public class Checklist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             confirm();
         }
     }
-    public void set_up(Activity activity)
+    public void set_up(Activity inputActivity)
     {
-        nameText.text = activity.name;
-        descriptionText.text = activity.detail;
-        difficulty = activity.difficulty;
+        activity = inputActivity;
+        nameText.text = inputActivity.name;
+        descriptionText.text = inputActivity.detail;
+        difficulty = inputActivity.difficulty;
+        confirmed = inputActivity.compeleted;
+        Debug.Log(activity.compeleted);
         set_star();
-        if (activity.compeleted)
+        if (inputActivity.compeleted)
         {
             disable();
         }
@@ -54,7 +56,9 @@ public class Checklist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         for (int i = 0; i < difficulty; i++)
         {
             Instantiate(starImage, starGrid.transform);
+            Debug.Log("star Created");
         }
+        Debug.Log("End");
     }
     public void OnPointerDown(PointerEventData data)
     {
@@ -67,6 +71,7 @@ public class Checklist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
     void confirm()
     {
+        activity.compeleted = true;
         disable();
     }
     void disable()

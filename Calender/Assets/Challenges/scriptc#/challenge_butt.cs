@@ -7,7 +7,7 @@ public class challenge_butt : MonoBehaviour
     public GameObject create_activity_bg;
     public GameObject bg_textdetail;
     public float hide_x, hide_y;
-    public create_post create_Post_script;
+    public CreatePost create_Post_script;
     public GameObject difficulty_of_act;
     public GameObject selected_starmode;
     void Start()

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class act_days : MonoBehaviour
 {
-    public create_post create_Post_script;
+    public CreatePost create_Post_script;
     public GameObject day_grid;
     public void reset()
     {

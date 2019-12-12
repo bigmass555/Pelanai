@@ -14,7 +14,7 @@ public class expand_showlist : MonoBehaviour
     public GameObject score_show;
 
     public challenge_butt challenge_Butt;
-    public create_post create_Post_scrp;
+    public CreatePost create_Post_scrp;
 
     public int this_star;
     // Start is called before the first frame update
@@ -22,7 +22,7 @@ public class expand_showlist : MonoBehaviour
     {
         //texthead = gameObject.transform.GetChild(1).gameObject;
         challenge_Butt = GameObject.Find("ButtonScript").GetComponent<challenge_butt>();
-        create_Post_scrp = GameObject.Find("Createpost_Script").GetComponent<create_post>();
+        create_Post_scrp = GameObject.Find("Createpost_Script").GetComponent<CreatePost>();
         mark_bg_textdetail = GameObject.Find("mark_bg_textdetail");
         bg_textdetail = GameObject.Find("bg_textdetail");
         textdetail = GameObject.Find("Textdetail");

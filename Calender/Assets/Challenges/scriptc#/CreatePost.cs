@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class create_post : MonoBehaviour
+public class CreatePost : MonoBehaviour
 {
     public RectTransform content_rect;
     public GameObject dayGrid;
+    public GameObject starImage;
+    public GameObject difficultyGrid;
 
     //activity_list
     public List<string> name_act_list;
@@ -30,7 +32,7 @@ public class create_post : MonoBehaviour
     public GameObject unuse;
     public GameObject img_star;
    
-    public int int_star = 0;
+    public int starInt = 1;
     
     public challenge_butt challenge_Butt;
     public act_days actdays;
@@ -73,8 +75,8 @@ public class create_post : MonoBehaviour
         {
             act_name.text = "Walk 100m.";
             act_detail.text = "Walk 100m. every day.";
-            int_star = 1;
-            change_diff(set_only: true);
+            starInt = 1;
+            //change_difficulty(set_only: true);
             actdays.everyday();
         }
 
@@ -82,8 +84,8 @@ public class create_post : MonoBehaviour
         {
             act_name.text = "Run 100m.";
             act_detail.text = "Run 100m. in the weekend.";
-            int_star = 2;
-            change_diff(set_only: true);
+            starInt = 2;
+            //change_difficulty(set_only: true);
             actdays.weekend();
         }
 
@@ -91,8 +93,8 @@ public class create_post : MonoBehaviour
         {
             act_name.text = "Sit-Up 30 times";
             act_detail.text = "Sit-Up 30 times every day.";
-            int_star = 2;
-            change_diff(set_only: true);
+            starInt = 2;
+            //change_difficulty(set_only: true);
             actdays.everyday();
         }
 
@@ -100,8 +102,8 @@ public class create_post : MonoBehaviour
         {
             act_name.text = "Read a book";
             act_detail.text = "Read a book in the weekend.";
-            int_star = 1;
-            change_diff(set_only: true);
+            starInt = 1;
+            //change_difficulty(set_only: true);
             actdays.weekend();
         }
 
@@ -109,8 +111,8 @@ public class create_post : MonoBehaviour
         {
             act_name.text = "Solve a <e>Judge problem";
             act_detail.text = "Solve a <e>Judge problem every monday to friday.";
-            int_star = 3;
-            change_diff(set_only: true);
+            starInt = 3;
+            //change_difficulty(set_only: true);
             actdays.mon_to_fri();
         }
 
@@ -118,37 +120,34 @@ public class create_post : MonoBehaviour
         {
             act_name.text = "Take a typing test on Ratatype";
             act_detail.text = "Take a typing test on Ratatype on sunday.";
-            int_star = 2;
-            change_diff(set_only: true);
+            starInt = 2;
+            //change_difficulty(set_only: true);
             actdays.sun_only();
         }
     }// Change/Add Preset Activity Detail by OnValueChange
 
-    public void change_diff(bool set_only = false)
+    public void change_difficulty()
     {
-        for (int i = 0; i < challenge_Butt.selected_starmode.transform.childCount; i++)
+        starInt++;
+        if (difficultyGrid.transform.childCount < 5)
         {
-            Destroy(challenge_Butt.selected_starmode.transform.GetChild(i).gameObject);
-        }
-
-        if (int_star < 5) 
-        {
-            int_star += 1;
-            if (set_only == true)
-            {
-                int_star -= 1;
-            }
+            Instantiate(starImage, difficultyGrid.transform);
         }
         else
         {
-            int_star = 1;
+            clear_star_to_one();
         }
-
-        for (int i = 0; i < int_star; i++)
-        {
-            Instantiate(img_star, challenge_Butt.selected_starmode.transform);
-        }
+        Debug.Log(starInt);
     } //change img_star number of difficulty of activity
+    public void clear_star_to_one()
+    {
+        foreach(Transform star in difficultyGrid.transform)
+        {
+            Destroy(star.gameObject);
+        }
+        Instantiate(starImage, difficultyGrid.transform);
+        starInt = 1;
+    }
 
     public void Update()
     {
@@ -178,11 +177,10 @@ public class create_post : MonoBehaviour
     */
     public void butt_confirm_create()
     {
-        act_difficulty = int_star;
         Activity newActivity = new Activity();
         newActivity.name = act_name.text;
         newActivity.detail = act_detail.text;
-        newActivity.difficulty = act_difficulty;
+        newActivity.difficulty = starInt;
         newActivity.days = set_toggle();
         PelanaiData.activitiesList.Add(newActivity);
         foreach(int i in newActivity.days)
@@ -191,8 +189,7 @@ public class create_post : MonoBehaviour
         }
         Debug.Log("created");
         create(newActivity);
-        challenge_Butt.set_to_main();
-    }//OnClick    public void set_toggle()
+    }
     List<int> set_toggle()
     {
         List<int> dayList = new List<int>();

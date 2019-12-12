@@ -51,6 +51,7 @@ public class CalendarController : MonoBehaviour, IDragHandler, IEndDragHandler
         foreach (Transform dateslot in targetPage.transform)
         {
             TextMeshProUGUI[] textInSlot = dateslot.GetComponentsInChildren<TextMeshProUGUI>();
+            DateSlot dateSlot = dateslot.GetComponent<DateSlot>();
             TextMeshProUGUI text = textInSlot[0];
             System.DateTime caldate = Helper.Time.CalDate(first_date_of_month, step - first_day_of_month);
             text.text = caldate.ToString("dd");
@@ -58,9 +59,17 @@ public class CalendarController : MonoBehaviour, IDragHandler, IEndDragHandler
             {
                 text.color = greyOut;
             }
-            if (caldate == Helper.Time.FullDate)
+            else if (caldate == Helper.Time.FullDate)
             {
                 text.color = highlightToday;
+            }
+            else if (PelanaiData.dateDataDict.ContainsKey(caldate))
+            {
+                int dateDataRate = PelanaiData.dateDataDict[caldate].rate;
+                if (dateDataRate == 1)
+                    dateSlot.button.image.color = dateSlot.completeColor;
+                else if (dateDataRate == -1)
+                    dateSlot.button.image.color = dateSlot.faliedColor;
             }
             step += 1;
         }
@@ -70,14 +79,6 @@ public class CalendarController : MonoBehaviour, IDragHandler, IEndDragHandler
         if (!transitioning)
         {
             float differ = (data.pressPosition.x - data.position.x) * swipeSpeed;
-            if (differ > 0)
-            {
-                //write_calendar(Helper.Time.SubtractDate(Helper.Time.FullDate, index), 2);
-            }
-            else if (differ < 0)
-            {
-                //write_calendar(Helper.Time.SubtractDate(Helper.Time.FullDate, index - 1), 0);
-            }
             transform.localPosition = oriposition - new Vector3(differ, 0);
         }
     }

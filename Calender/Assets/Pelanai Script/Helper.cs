@@ -72,9 +72,8 @@ public static class Helper
         public static int GetintFromDay(string dayInput)
         {
             if (days_list.Contains(dayInput))
-                Debug.Log(dayInput);
                 return days_list.IndexOf(dayInput) + 1;
-            return 100;
+            return 0;
         }
         public static string GetDayFromInt(int num)
         {
