@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 32145615}
   - component: {fileID: 32145614}
   m_Layer: 5
-  m_Name: score
+  m_Name: score2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -597,7 +597,7 @@ GameObject:
   - component: {fileID: 69134767}
   - component: {fileID: 69134766}
   m_Layer: 5
-  m_Name: bar1
+  m_Name: bar8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -966,7 +966,7 @@ GameObject:
   - component: {fileID: 202588359}
   - component: {fileID: 202588358}
   m_Layer: 5
-  m_Name: bar1
+  m_Name: bar10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1127,7 +1127,7 @@ GameObject:
   - component: {fileID: 258589014}
   - component: {fileID: 258589013}
   m_Layer: 5
-  m_Name: score
+  m_Name: score10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1702,7 +1702,7 @@ GameObject:
   - component: {fileID: 591304149}
   - component: {fileID: 591304148}
   m_Layer: 5
-  m_Name: score
+  m_Name: score7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1857,7 +1857,7 @@ GameObject:
   - component: {fileID: 628754938}
   - component: {fileID: 628754937}
   m_Layer: 5
-  m_Name: score
+  m_Name: score6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2413,7 +2413,7 @@ GameObject:
   - component: {fileID: 798742413}
   - component: {fileID: 798742412}
   m_Layer: 5
-  m_Name: score
+  m_Name: score8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2568,7 +2568,7 @@ GameObject:
   - component: {fileID: 806725007}
   - component: {fileID: 806725006}
   m_Layer: 5
-  m_Name: bar1
+  m_Name: bar4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2641,7 +2641,7 @@ GameObject:
   - component: {fileID: 833106640}
   - component: {fileID: 833106639}
   m_Layer: 5
-  m_Name: bar1
+  m_Name: bar11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2955,7 +2955,7 @@ GameObject:
   - component: {fileID: 949913473}
   - component: {fileID: 949913472}
   m_Layer: 5
-  m_Name: score
+  m_Name: score5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3489,7 +3489,7 @@ GameObject:
   - component: {fileID: 975177250}
   - component: {fileID: 975177249}
   m_Layer: 5
-  m_Name: score
+  m_Name: score4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4168,7 +4168,7 @@ GameObject:
   - component: {fileID: 1153362450}
   - component: {fileID: 1153362449}
   m_Layer: 5
-  m_Name: bar1
+  m_Name: bar2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4671,7 +4671,7 @@ GameObject:
   - component: {fileID: 1445855966}
   - component: {fileID: 1445855965}
   m_Layer: 5
-  m_Name: bar1
+  m_Name: bar7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4744,7 +4744,7 @@ GameObject:
   - component: {fileID: 1462138566}
   - component: {fileID: 1462138565}
   m_Layer: 5
-  m_Name: score
+  m_Name: score3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5302,7 +5302,7 @@ GameObject:
   - component: {fileID: 1572546090}
   - component: {fileID: 1572546089}
   m_Layer: 5
-  m_Name: score
+  m_Name: score1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6069,7 +6069,7 @@ GameObject:
   - component: {fileID: 1755845908}
   - component: {fileID: 1755845907}
   m_Layer: 5
-  m_Name: score
+  m_Name: score11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6379,7 +6379,7 @@ GameObject:
   - component: {fileID: 1845298716}
   - component: {fileID: 1845298715}
   m_Layer: 5
-  m_Name: bar1
+  m_Name: bar3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6452,7 +6452,7 @@ GameObject:
   - component: {fileID: 1886179640}
   - component: {fileID: 1886179639}
   m_Layer: 5
-  m_Name: bar1
+  m_Name: bar5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6525,7 +6525,7 @@ GameObject:
   - component: {fileID: 1930101260}
   - component: {fileID: 1930101259}
   m_Layer: 5
-  m_Name: score
+  m_Name: score9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6680,7 +6680,7 @@ GameObject:
   - component: {fileID: 1951213409}
   - component: {fileID: 1951213408}
   m_Layer: 5
-  m_Name: bar1
+  m_Name: bar6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6897,7 +6897,7 @@ GameObject:
   - component: {fileID: 2124279659}
   - component: {fileID: 2124279658}
   m_Layer: 5
-  m_Name: bar1
+  m_Name: bar9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
