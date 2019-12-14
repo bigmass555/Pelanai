@@ -25,8 +25,6 @@ public class CalendarController : MonoBehaviour, IDragHandler, IEndDragHandler
     void Start()
     {
         monthPagesPlaceHolder = GetComponent<RectTransform>();
-        Debug.Log(transform.position);
-        Debug.Log(transform.localPosition);
         oriposition = transform.localPosition;
         instantiate_month_page(-1, 0);
         instantiate_month_page(0, 1);
@@ -58,18 +56,42 @@ public class CalendarController : MonoBehaviour, IDragHandler, IEndDragHandler
             if (caldate.Month != month)
             {
                 text.color = greyOut;
+                step += 1;
+                continue;
             }
-            else if (caldate == Helper.Time.FullDate)
+            if (caldate == Helper.Time.FullDate)
             {
                 text.color = highlightToday;
             }
-            else if (PelanaiData.dateDataDict.ContainsKey(caldate))
+            if (PelanaiData.dateDataDict.ContainsKey(caldate.ToString("MM/dd/yyyy")))
             {
-                int dateDataRate = PelanaiData.dateDataDict[caldate].rate;
+                int dateDataRate = PelanaiData.dateDataDict[caldate.ToString("MM/dd/yyyy")].rate;
                 if (dateDataRate == 1)
+                {
                     dateSlot.button.image.color = dateSlot.completeColor;
-                else if (dateDataRate == -1)
+                }
+                else if (dateDataRate == -1 && caldate != Helper.Time.FullDate)
+                {
                     dateSlot.button.image.color = dateSlot.faliedColor;
+                }
+            }
+            else if (PelanaiData.firstTimeLogin <= caldate.Date && caldate.Date < System.DateTime.Now.Date)
+            {
+                foreach (Activity activity in PelanaiData.activitiesList)
+                {
+                    if (activity.days.Contains(Helper.Time.GetintFromDay(caldate.DayOfWeek.ToString())))
+                    {
+                        dateSlot.button.image.color = dateSlot.faliedColor;
+                        DateData dateData = new DateData(PelanaiData.activitiesList, caldate);
+                        dateData.rate = -1;
+                        break;
+                    }
+                    else
+                    {
+                        DateData dateData = new DateData(PelanaiData.activitiesList, caldate);
+                        dateData.rate = 0;
+                    }
+                }
             }
             step += 1;
         }
@@ -96,7 +118,6 @@ public class CalendarController : MonoBehaviour, IDragHandler, IEndDragHandler
                     instantiate_month_page(1, 3, 0);
                     change_text(index);
                     newposition += new Vector2(-(monthPagesPlaceHolder.rect.width + horizontalSpacing), transform.localPosition.y);
-                    Debug.Log((monthPagesPlaceHolder.rect.width + horizontalSpacing));
                 }
                 else if (percent < 0)
                 {
@@ -143,8 +164,6 @@ public class CalendarController : MonoBehaviour, IDragHandler, IEndDragHandler
             transform.localPosition = Vector2.Lerp(position, newposition, Mathf.SmoothStep(0f, 1f, elastime));
             yield return null;
         }
-        Debug.Log(transform.position);
-        Debug.Log(transform.localPosition);
         transitioning = false;
     }
 }

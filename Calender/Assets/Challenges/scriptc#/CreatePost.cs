@@ -6,6 +6,8 @@ using TMPro;
 
 public class CreatePost : MonoBehaviour
 {
+    public ActivitiesGridController activitiesGrid;
+
     public RectTransform content_rect;
     public GameObject dayGrid;
     public GameObject starImage;
@@ -129,30 +131,29 @@ public class CreatePost : MonoBehaviour
     public void change_difficulty()
     {
         starInt++;
-        if (difficultyGrid.transform.childCount < 5)
+        if (starInt >= 6)
         {
-            Instantiate(starImage, difficultyGrid.transform);
+            starInt = 1;
         }
-        else
-        {
-            clear_star_to_one();
-        }
-        Debug.Log(starInt);
+        set_star(starInt);
     } //change img_star number of difficulty of activity
-    public void clear_star_to_one()
+    public void set_star(int num)
     {
         foreach(Transform star in difficultyGrid.transform)
         {
             Destroy(star.gameObject);
         }
-        Instantiate(starImage, difficultyGrid.transform);
-        starInt = 1;
+        for (int i = 0; i < num; i++)
+        {
+            Instantiate(starImage, difficultyGrid.transform);
+        }
+        starInt = num;
     }
 
     public void Update()
     {
         //update content_rect_tranform lenght to match with their child
-        content_rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, (showlist_prefab_group.Count * 50));
+        //content_rect.SetSizeWithCurrentAnchors(RectTransform.Axis.Vertical, (showlist_prefab_group.Count * 50));
     } 
     /*
     public void setting_showlist()
@@ -183,12 +184,8 @@ public class CreatePost : MonoBehaviour
         newActivity.difficulty = starInt;
         newActivity.days = set_toggle();
         PelanaiData.activitiesList.Add(newActivity);
-        foreach(int i in newActivity.days)
-        {
-            Debug.Log(i);
-        }
         Debug.Log("created");
-        create(newActivity);
+        activitiesGrid.createShowlist(newActivity);
     }
     List<int> set_toggle()
     {

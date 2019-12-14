@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class ChecklistsController : MonoBehaviour
+public class ActivitiesGridController : MonoBehaviour
 {
-    public GameObject checker;
-    public GameObject checklistGrid;
-    public ProfileBar profileBar;
+    public GameObject showList;
+    public GameObject activitiesGrid;
     public List<Activity> displayActivity;
     public RectTransform rectTransform;
     // Start is called before the first frame update
@@ -26,14 +25,18 @@ public class ChecklistsController : MonoBehaviour
         int toDayInt = Helper.Time.GetintFromDay(DateTime.Now.DayOfWeek.ToString());
         foreach (Activity activity in PelanaiData.activitiesList)
         {
-            if (activity.days.Contains(toDayInt) && !displayActivity.Contains(activity))
+            if (!displayActivity.Contains(activity))
             {
-                displayActivity.Add(activity);
-                Checklist checklist = Instantiate(checker, checklistGrid.transform).GetComponent<Checklist>();
-                checklist.set_up(activity, profileBar);
+                createShowlist(activity);
             }
         }
-        Debug.Log("Open");
-        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, (218 * displayActivity.Count));
+        Debug.Log(displayActivity.Count * 200);
+        rectTransform.sizeDelta = new Vector2(rectTransform.sizeDelta.x, (230 * displayActivity.Count));
+    }
+    public void createShowlist(Activity activity)
+    {
+        displayActivity.Add(activity);
+        Showlist showlist = Instantiate(showList, activitiesGrid.transform).GetComponent<Showlist>();
+        showlist.set_up(activity);
     }
 }

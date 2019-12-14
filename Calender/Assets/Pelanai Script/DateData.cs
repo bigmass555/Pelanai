@@ -1,32 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 [System.Serializable]
 public class DateData
 {
+    public DateTime date;
     public List<Activity> activitieslist = new List<Activity>();
     public int rate = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    public void set_data(List<Activity> activitieslistInput)
+    public DateData(List<Activity> activitieslistInput, DateTime date)
     {
         activitieslist = activitieslistInput;
-        int calRate = 1;
+        int calRate = 0;
+        
         foreach (Activity activity in activitieslist)
         {
-            if (activity.compeleted == false)
+            if (activity.days.Contains(Helper.Time.GetintFromDay(date.DayOfWeek.ToString())))
             {
-                calRate = -1;
-                break;
+                if (activity.compeleted == false)
+                {
+                    calRate = -1;
+                    break;
+                }
+                else
+                {
+                    calRate = 1;
+                }
             }
         }
         rate = calRate;

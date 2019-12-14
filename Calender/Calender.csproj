@@ -611,28 +611,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Calender\Scripts Calender\CalendarController.cs" />
-    <Compile Include="Assets\Calender\Scripts Calender\Checklist.cs" />
-    <Compile Include="Assets\Calender\Scripts Calender\ChecklistsController.cs" />
-    <Compile Include="Assets\Calender\Scripts Calender\DateSlot.cs" />
-    <Compile Include="Assets\Calender\Scripts Calender\GameManager.cs" />
-    <Compile Include="Assets\Calender\Scripts Calender\MonthPage.cs" />
-    <Compile Include="Assets\Challenges\scriptc#\challenge.cs" />
-    <Compile Include="Assets\Challenges\scriptc#\challenge_butt.cs" />
-    <Compile Include="Assets\Challenges\scriptc#\CreatePost.cs" />
-    <Compile Include="Assets\Challenges\scriptc#\expand_showlist.cs" />
-    <Compile Include="Assets\Challenges\scriptc#\Showlist.cs" />
-    <Compile Include="Assets\Pelanai Script\DateData.cs" />
-    <Compile Include="Assets\Pelanai Script\Helper.cs" />
-    <Compile Include="Assets\Pelanai Script\MainMenu.cs" />
-    <Compile Include="Assets\Pelanai Script\MenuButton.cs" />
-    <Compile Include="Assets\Pelanai Script\PelanaiData.cs" />
-    <Compile Include="Assets\Pelanai Script\SaveData.cs" />
-    <Compile Include="Assets\Pelanai Script\SaveSystem.cs" />
+    <Compile Include="Assets\CalendarController.cs" />
+    <Compile Include="Assets\GameManager.cs" />
+    <Compile Include="Assets\Helper.cs" />
     <Compile Include="Assets\Script\codeachievement.cs" />
     <Compile Include="Assets\Script\NewBehaviourScript.cs" />
-    <Compile Include="Assets\scriptc#\act_days.cs" />
-    <Compile Include="Assets\scriptc#\activity.cs" />
+    <Compile Include="Assets\scriptc#\challenge.cs" />
+    <Compile Include="Assets\scriptc#\challenge_butt.cs" />
+    <Compile Include="Assets\scriptc#\create_post.cs" />
+    <Compile Include="Assets\scriptc#\deadline_timeend.cs" />
+    <Compile Include="Assets\scriptc#\expand_showlist.cs" />
+    <Compile Include="Assets\scriptc#\userdata.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />

@@ -15,6 +15,7 @@ public class Checklist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public Image fillBar;
     public int difficulty;
     public Button button;
+    public ProfileBar profileBar;
     [SerializeField] float fillTime = 1f;
     float fillSpeed;
     bool confirmed = false;
@@ -37,13 +38,14 @@ public class Checklist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             confirm();
         }
     }
-    public void set_up(Activity inputActivity)
+    public void set_up(Activity inputActivity, ProfileBar inputProfileBar)
     {
         activity = inputActivity;
         nameText.text = inputActivity.name;
         descriptionText.text = inputActivity.detail;
         difficulty = inputActivity.difficulty;
         confirmed = inputActivity.compeleted;
+        profileBar = inputProfileBar;
         Debug.Log(activity.compeleted);
         set_star();
         if (inputActivity.compeleted)
@@ -56,9 +58,7 @@ public class Checklist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         for (int i = 0; i < difficulty; i++)
         {
             Instantiate(starImage, starGrid.transform);
-            Debug.Log("star Created");
         }
-        Debug.Log("End");
     }
     public void OnPointerDown(PointerEventData data)
     {
@@ -71,6 +71,8 @@ public class Checklist : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
     void confirm()
     {
+        PelanaiData.addScore(100 * difficulty * PelanaiData.expBonus);
+        profileBar.cal_score();
         activity.compeleted = true;
         disable();
     }

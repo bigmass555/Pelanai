@@ -14,7 +14,7 @@ public static class SaveSystem
         FileStream stream = new FileStream(path, FileMode.Create);
 
         SaveData data = new SaveData();
-
+        
         formatter.Serialize(stream, data);
         stream.Close();
         Debug.Log("gamesave");
