@@ -3878,7 +3878,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &467454222
 GameObject:
@@ -9573,7 +9573,6 @@ GameObject:
   - component: {fileID: 1031432015}
   - component: {fileID: 1031432014}
   - component: {fileID: 1031432013}
-  - component: {fileID: 1031432017}
   m_Layer: 5
   m_Name: Notification Menu
   m_TagString: Untagged
@@ -9668,24 +9667,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1031432011}
   m_CullTransparentMesh: 0
---- !u!114 &1031432017
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031432011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8abd31f5cb46c7340a30a5c3ba8b6fb0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hourInputField: {fileID: 324105205}
-  minuteInputField: {fileID: 240861382}
-  invalidText: {fileID: 1926285141}
-  toggle: {fileID: 1921246547}
-  hour: 0
-  minute: 0
 --- !u!1 &1064952537
 GameObject:
   m_ObjectHideFlags: 0
@@ -10111,6 +10092,7 @@ GameObject:
   - component: {fileID: 1114562504}
   - component: {fileID: 1114562505}
   - component: {fileID: 1114562506}
+  - component: {fileID: 1114562507}
   m_Layer: 0
   m_Name: Pelanai
   m_TagString: Untagged
@@ -10145,6 +10127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profileBar: {fileID: 0}
+  notificationController: {fileID: 0}
   resetSave: 0
 --- !u!114 &1114562506
 MonoBehaviour:
@@ -10162,6 +10145,24 @@ MonoBehaviour:
   level: 0
   achievementGrid: {fileID: 776095863}
   achieveLists: []
+--- !u!114 &1114562507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114562503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8abd31f5cb46c7340a30a5c3ba8b6fb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hourInputField: {fileID: 324105205}
+  minuteInputField: {fileID: 240861382}
+  invalidText: {fileID: 1926285141}
+  toggle: {fileID: 1921246547}
+  hour: 0
+  minute: 0
 --- !u!1 &1120371467
 GameObject:
   m_ObjectHideFlags: 0
@@ -18012,7 +18013,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1031432017}
+      - m_Target: {fileID: 1114562507}
         m_MethodName: notification_set
         m_Mode: 1
         m_Arguments:

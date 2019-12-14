@@ -17,12 +17,13 @@ public class PelanaiData : MonoBehaviour
     public static int notificationHour;
     public static int notificationMinute;
 
+    public NotificationController notificationController;
 
     //Not Save
     public static int dayStreak;
     public static float expBonus;
 
-    public int resetSave;
+    public int resetSave = 0;
     private void Awake()
     {
         if (PlayerPrefs.HasKey("resetSave"))
@@ -68,6 +69,17 @@ public class PelanaiData : MonoBehaviour
         DateData dateData = new DateData(activitiesList, DateTime.Now.Date);
         dateDataDict[DateTime.Now.Date.ToString("MM/dd/yyyy")] = dateData;
         SaveGame();
+        Debug.Log("OnApplicationQuit");
+    }
+    public void OnApplicationPause(bool pause)
+    {
+        if (pause)
+        {
+            DateData dateData = new DateData(activitiesList, DateTime.Now.Date);
+            dateDataDict[DateTime.Now.Date.ToString("MM/dd/yyyy")] = dateData;
+            SaveGame();
+            Debug.Log("OnApplicationPause");
+        }
     }
     void SaveGame()
     {
@@ -135,5 +147,6 @@ public class PelanaiData : MonoBehaviour
         PlayerPrefs.SetInt("resetSave", 1);
         Application.Quit();
         Debug.Log("Quit");
+
     }
 }

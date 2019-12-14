@@ -20,6 +20,8 @@ public class NotificationController : MonoBehaviour
         toggle.isOn = PelanaiData.notification;
         hourInputField.text = PelanaiData.notificationHour.ToString();
         minuteInputField.text = PelanaiData.notificationMinute.ToString();
+        hour = int.Parse(hourInputField.text);
+        minute = int.Parse(minuteInputField.text);
     }
     // Update is called once per frame
     void Update()
@@ -37,6 +39,8 @@ public class NotificationController : MonoBehaviour
         {
             hour = int.Parse(hourInputField.text);
             minute = int.Parse(minuteInputField.text);
+            Debug.Log(hour);
+            Debug.Log(minute);
             PelanaiData.notificationHour = hour;
             PelanaiData.notificationMinute = minute;
             invalidText.text = "Settings Confirmed.";
@@ -51,19 +55,23 @@ public class NotificationController : MonoBehaviour
     {
         if (PelanaiData.notification)
         {
+            Debug.Log("Notification On");
             DateTime dateTimeNow = DateTime.Now;
+            Debug.Log(hour.ToString() + "hour");
             DateTime newtime = new DateTime(dateTimeNow.Year, dateTimeNow.Month, dateTimeNow.Day, hour, minute, 0);
+            Debug.Log(newtime.ToString() + " newtime");
             TimeSpan delay = newtime - dateTimeNow;
             NotificationManager.CancelAll();
             if (isPause)
             {
                 for (int i = 0; i < 7; i++)
                 {
+                    Debug.Log(delay);
                     int toDayInt = Helper.Time.GetintFromDay(newtime.DayOfWeek.ToString());
                     int activitiesNum = 0;
-                    foreach(Activity activity in PelanaiData.activitiesList)
+                    foreach (Activity activity in PelanaiData.activitiesList)
                     {
-                        if(activity.days.Contains(toDayInt))
+                        if (activity.days.Contains(toDayInt))
                         {
                             activitiesNum += 1;
                         }
@@ -72,15 +80,51 @@ public class NotificationController : MonoBehaviour
                     {
                         string detail = "You have " + activitiesNum.ToString() + " activities to do today.";
                         NotificationManager.SendWithAppIcon(delay, "You have somthing to do.", detail, Color.cyan, NotificationIcon.Bell);
-                        newtime = newtime.AddDays(i);
                     }
+                    newtime = newtime.AddDays(1);
+                    delay = newtime - dateTimeNow;
                 }
 
             }
         }
     }
-    public void OnApplicationQuit()
+    private void OnApplicationQuit()
     {
+        Debug.Log("notifications Quit");
+        if (PelanaiData.notification)
+        {
+            Debug.Log("Notification On");
+            DateTime dateTimeNow = DateTime.Now;
+            Debug.Log(hour.ToString() + "hour");
+            DateTime newtime = new DateTime(dateTimeNow.Year, dateTimeNow.Month, dateTimeNow.Day, hour, minute, 0);
+            Debug.Log(newtime.ToString() + " newtime");
+            TimeSpan delay = newtime - dateTimeNow;
+            NotificationManager.CancelAll();
+            if (true)
+            {
+                for (int i = 0; i < 7; i++)
+                {
+                    Debug.Log(delay);
+                    int toDayInt = Helper.Time.GetintFromDay(newtime.DayOfWeek.ToString());
+                    int activitiesNum = 0;
+                    foreach (Activity activity in PelanaiData.activitiesList)
+                    {
+                        if (activity.days.Contains(toDayInt))
+                        {
+                            activitiesNum += 1;
+                        }
+                    }
+                    if (activitiesNum != 0)
+                    {
+                        string detail = "You have " + activitiesNum.ToString() + " activities to do today.";
+                        Debug.Log(detail);
+                        NotificationManager.SendWithAppIcon(delay, "You have somthing to do.", detail, Color.cyan, NotificationIcon.Bell);
+                    }
+                    newtime = newtime.AddDays(1);
+                    delay = newtime - dateTimeNow;
+                }
 
+            }
+        }
     }
 }
